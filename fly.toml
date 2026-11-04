@@ -1,10 +1,10 @@
-# fly.toml app configuration file generated for nova-browser-rebuild-5ldx9g on 2026-11-04T01:22:17Z
+# fly.toml app configuration file generated for nova-browser-rebuild-fbd2nq on 2026-11-04T03:07:14Z
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'nova-browser-rebuild-5ldx9g'
-primary_region = 'ewr'
+app = 'nova-browser-rebuild-fbd2nq'
+primary_region = 'ams'
 
 [build]
 
