@@ -54,7 +54,12 @@ function resolvePort() {
     break;
   }
 
-  return flag ? Number(flag) : process.env.PORT || 8080;
+  const port = flag ? Number(flag) : Number(process.env.PORT || 8080);
+  if (!Number.isInteger(port) || port < 1 || port > 65535) {
+    console.log(chalk.red(`Invalid PORT ${JSON.stringify(port)}, expected an integer from 1 to 65535.`));
+    process.exit(1);
+  }
+  return port;
 }
 
 const PORT = resolvePort();
@@ -187,4 +192,4 @@ server.on("listening", () => {
   console.log(chalk.green(`🌍 Server is running on http://localhost:${PORT}`));
 });
 
-server.listen({ port: PORT });
+server.listen({ port: PORT, host: "0.0.0.0" });
